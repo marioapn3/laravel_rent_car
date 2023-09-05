@@ -5,6 +5,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\CarReturnController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\ReturnCarController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -38,17 +39,15 @@ Route::get('/car', [CarController::class, 'index_car'])->name('index_car');
 
 
 
+
 Route::middleware(['admin'])->group(function () {
 
     Route::get('/admin/dashboardreturn/edit/{CarReturn}', [CarReturnController::class, 'edit_validate_car'])->name('edit_validate_car');
     Route::patch('/admin/dashboardcar/{CarReturn}', [CarReturnController::class, 'update_return'])->name('update_return');
     Route::get('/admin/dashboardhome', [OrderController::class, 'dashboard_home'])->name('dashboard_home');
     Route::get('/admin/dashboardhome/{range}', [OrderController::class, 'dashboard_home_'])->name('dashboard_home_');
-
-
+    Route::post('/admin/laporankeuangan/{range}', [PdfController::class, 'laporan_keuangan'])->name('pdf_keuangan');
     Route::post('/admin/dashboardorder/confirm/{payment}', [PaymentController::class, 'confirmPayment'])->name('confirmPayment');
-
-
     Route::get('/admin/dashboardcar', [AdminController::class, 'dashboard_car'])->name('dashboard_car');
 
     Route::get('admin/dashboardcar/create', [AdminController::class, 'create_car'])->name('create_car');
@@ -64,7 +63,7 @@ Route::middleware(['admin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-
+    Route::post('/pdf_user', [PdfController::class, 'bukti_pembayaran_pdf'])->name('pdf_user');
     Route::get('/profile', [UserController::class, 'index_user'])->name('index_user');
     Route::patch('/profile', [UserController::class, 'edit_user'])->name('edit_user');
     //Car Route

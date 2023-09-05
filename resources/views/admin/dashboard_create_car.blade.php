@@ -81,15 +81,38 @@
                 <form role="form" method="post" action="{{ route('store_car') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>Nama : </label><br>
+                        <label>Seri Mobil : </label><br>
                         <input class="form-control" type="text"name="name" /><br>
                         <label>Brand : </label><br>
-                        <input class="form-control" type="text"name="brand" /><br>
+                        <div class="custom-select" style="width:200px;">
+                            <select style="font-size: 18px ; padding: 6px 5px; margin: 5px 0px" name="brand"
+                                id="" class="form-control">
+                                <option value="Toyota">Toyota</option>
+                                <option value="Mitshubishi">Mitshubishi</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="Izuzu">Izuzu</option>
+                                <option value="Daihatsu">Daihatsu </option>
+                                <option value="Chevrolet">Chevrolet</option>
+                            </select><br>
+                        </div>
+                        {{-- <input class="form-control" type="text"name="brand" /><br> --}}
                         <label>Warna : </label><br>
-                        <input class="form-control" type="text"name="colour" /><br>
+                        {{-- <input class="form-control" type="text"name="colour" /><br> --}}
+                        <div class="custom-select" style="width:200px;">
+                            <select style="font-size: 18px ; padding: 6px 5px; margin: 5px 0px" name="colour"
+                                id="" class="form-control">
+                                <option value="Merah">Merah</option>
+                                <option value="Hitam">Hitam</option>
+                                <option value="Putih">Putih</option>
+                                <option value="Biru">Biru</option>
+                                <option value="Gold">Gold </option>
+                                <option value="Silver">Silver</option>
+                            </select><br>
+                        </div>
                         <label>Plat Nomor : </label><br>
                         <input class="form-control" type="text"name="plat_num" /><br>
-                        <label>Kapasitas : </label><br>
+                        <label>Kapasitas Penumpang : </label><br>
                         <input class="form-control"type="number" name="capacity" /><br>
                         <label>Fuel : </label><br>
                         <input class="form-control" type="text"name="fuel" /><br>

@@ -84,6 +84,11 @@
                                             <h4 class="card-text fw-bold text-success"><i class="fa fa-check"></i>
                                                 SUKSES
                                             </h4>
+                                            <form action="{{ route('pdf_user') }}" method="post">
+                                                @csrf
+                                                <button class="btn btn-success" type="submit" style="">Download
+                                                    PDF</button>
+                                            </form>
                                         @endif
                                     @endif
 
@@ -126,7 +131,8 @@
                                                             </select>
                                                         </div>
 
-                                                        <label for="formFileMultiple" class="form-label">Silahkan input
+                                                        <label for="formFileMultiple" class="form-label">Silahkan
+                                                            input
                                                             bukti
                                                             pembayaran</label>
                                                         <form

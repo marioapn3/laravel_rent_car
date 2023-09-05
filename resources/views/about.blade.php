@@ -36,6 +36,7 @@
                     <img class="w-75 mb-4" src="img/pict2.jpg" alt="" />
                     <div class="d-flex align-items-center p-4 mb-4 text-dark">
                         <p>
+
                             AutoRent adalah platform penyewaan mobil online yang menyediakan layanan berkualitas tinggi
                             bagi pelanggan
                             yang membutuhkan kendaraan sementara. Dengan menggunakan teknologi canggih dan proses yang
